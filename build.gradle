@@ -2,7 +2,7 @@ import static org.gradle.kotlin.dsl.KotlinDependencyExtensionsKt.embeddedKotlinV
 
 buildscript {
     ext {
-        kotlin_version = embeddedKotlinVersion
+        kotlin_version = "1.7.21"
     }
     repositories {
         mavenLocal()
@@ -18,19 +18,20 @@ buildscript {
         classpath "com.android.tools.build:gradle:$android_gradle_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.didiglobal.booster:booster-gradle-plugin:$booster_version"
-        classpath "com.didiglobal.booster:booster-task-compression-processed-res:$booster_version"
-        classpath "com.didiglobal.booster:booster-task-compression-cwebp:$booster_version"
-        classpath "com.didiglobal.booster:booster-task-compression-pngquant:$booster_version"
-        classpath "com.didiglobal.booster:booster-task-resource-deredundancy:$booster_version"
-        classpath "com.didiglobal.booster:booster-task-list-artifact:$booster_version"
+//        classpath "com.didiglobal.booster:booster-task-compression-processed-res:$booster_version"
+//        classpath "com.didiglobal.booster:booster-task-compression-cwebp:$booster_version"
+//        classpath "com.didiglobal.booster:booster-task-compression-pngquant:$booster_version"
+//        classpath "com.didiglobal.booster:booster-task-resource-deredundancy:$booster_version"
+//        classpath "com.didiglobal.booster:booster-task-list-artifact:$booster_version"
+//        classpath "com.didiglobal.booster:booster-task-analyser:$booster_version"
+//        classpath "com.didiglobal.booster:booster-transform-activity-thread:$booster_version"
+//        classpath "com.didiglobal.booster:booster-transform-toast:$booster_version"
+//        classpath "com.didiglobal.booster:booster-transform-webview:$booster_version"
+//        classpath "com.didiglobal.booster:booster-transform-br-inline:$booster_version"
+//        classpath "com.didiglobal.booster:booster-transform-r-inline:$booster_version"
+//        classpath "com.didiglobal.booster:booster-transform-service-loader:$booster_version"
+//        classpath "io.johnsonlee.booster:booster-pngquant-provider:2.3.0"
         classpath "com.didiglobal.booster:booster-task-analyser:$booster_version"
-        classpath "com.didiglobal.booster:booster-transform-activity-thread:$booster_version"
-        classpath "com.didiglobal.booster:booster-transform-thread:$booster_version"
-        classpath "com.didiglobal.booster:booster-transform-webview:$booster_version"
-        classpath "com.didiglobal.booster:booster-transform-br-inline:$booster_version"
-        classpath "com.didiglobal.booster:booster-transform-r-inline:$booster_version"
-        classpath "com.didiglobal.booster:booster-transform-service-loader:$booster_version"
-        classpath "io.johnsonlee.booster:booster-pngquant-provider:2.3.0"
     }
 }
 
@@ -51,6 +52,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.didiglobal.booster'
 
 android {
+    namespace 'com.example.namespace'
     compileSdkVersion 30
     defaultConfig {
         applicationId 'io.github.boostersamples'
@@ -110,3 +112,9 @@ dependencies {
     testImplementation "org.robolectric:robolectric:${robolectric_version}"
 }
 
+//def androidComponents = project.extensions.getByType(com.android.build.api.variant.AndroidComponentsExtension.class)
+//
+//
+//androidComponents.onVariants {
+//    println "====wangzhiguo==== ${it.name}"
+//}
